@@ -1,7 +1,7 @@
 name: Run a bash command 
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch: # run the workflow manually
   push:
     branches: [main]
 
@@ -12,3 +12,15 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
+
+      - name: Run a commands manually
+        run:  #run this command
+          ls-a
+
+      - name: Run multiple commands manually
+        run: | #run this command
+          pwd
+          ls-a
+
+      - name: Run multiple commands manually
+        run: bash scripts/bash.sh
