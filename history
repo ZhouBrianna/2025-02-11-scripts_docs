@@ -1,0 +1,37 @@
+  501  cd Downloads/dsci310
+  502  git clone https://github.com/ZhouBrianna/2025-02-11-scripts_docs.git
+  503  cd 2025-02-11-scripts_docs
+  504  positron .
+  505  positron .
+  506  bash bash.sh
+  507  bash bash.sh
+  508  ls -a
+  509  bash script/bash.sh
+  510  cd script
+  511  bash bash.sh
+  512  cd ..
+  513  cat script.R
+  514  Rscript script.R
+  515  Rscript script/script.R
+  516  Rscript -e script/script.R
+  517  Rscript -e "1+1"
+  518  ls -a
+  519  mkdir -p .github/workflows
+  520  ls -a
+  521  git status
+  522  git status
+  523  git add .
+  524  git status
+  525  git commit -m 'add scripts and workflow'
+  526  git push origin main
+  527  git status
+  528  git add .
+  529  git commit -m "manually run bash command as an action"
+  530  git push origin main
+  531  git add .
+  532  git commit -m "fixed error"
+  533  git push origin main
+  534  pwd
+  535  git add .
+  536  git commit -m "fixed another error"
+  537  git push origin main
