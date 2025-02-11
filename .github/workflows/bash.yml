@@ -1,0 +1,14 @@
+name: Run a bash command 
+
+on:
+  workflow_dispatch: 
+  push:
+    branches: [main]
+
+jobs:
+  run_bash_command: 
+    name: Run a bash command using github actions # title for the job
+    runs-on: ubuntu-latest # 
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
