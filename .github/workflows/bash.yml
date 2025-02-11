@@ -15,12 +15,12 @@ jobs:
 
       - name: Run a commands manually
         run:  #run this command
-          ls-a
+          ls -a
 
       - name: Run multiple commands manually
         run: | #run this command
           pwd
-          ls-a
+          ls -a
 
       - name: Run multiple commands manually
         run: bash scripts/bash.sh
