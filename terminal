@@ -1,0 +1,150 @@
+(base) dhcp-128-189-80-112:~ briannazhou$ cd Downloads/dsci310
+(base) dhcp-128-189-80-112:dsci310 briannazhou$ git clone https://github.com/ZhouBrianna/2025-02-11-scripts_docs.git
+Cloning into '2025-02-11-scripts_docs'...
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (5/5), done.
+(base) dhcp-128-189-80-112:dsci310 briannazhou$ cd 2025-02-11-scripts_docs
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ positron .
+-bash: positron: command not found
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ positron .
+-bash: positron: command not found
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ bash bash.sh
+/Users/briannazhou/Downloads/dsci310/2025-02-11-scripts_docs
+.		.git		LICENSE		bash.sh
+..		.gitignore	README.md
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ bash bash.sh
+bash: bash.sh: No such file or directory
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ ls -a
+.		.git		LICENSE		script
+..		.gitignore	README.md
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ bash script/bash.sh
+/Users/briannazhou/Downloads/dsci310/2025-02-11-scripts_docs
+.		.git		LICENSE		script
+..		.gitignore	README.md
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ cd script
+(base) dhcp-128-189-80-112:script briannazhou$ bash bash.sh
+/Users/briannazhou/Downloads/dsci310/2025-02-11-scripts_docs/script
+.	..	bash.sh
+(base) dhcp-128-189-80-112:script briannazhou$ cd ..
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ cat script.R
+add_10 <- function(num) {
+    return (num + 10)
+}
+
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ Rscript script.R
+[1] 15
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ Rscript script/script.R
+[1] 15
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ Rscript -e script/script.R
+Error: object 'script' not found
+Execution halted
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ Rscript -e "1+1"
+[1] 2
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ ls -a
+.		.git		LICENSE		script
+..		.gitignore	README.md
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ mkdir -p .github/workflows
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ ls -a
+.		.git		.gitignore	README.md
+..		.github		LICENSE		script
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	script/
+
+nothing added to commit but untracked files present (use "git add" to track)
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.github/
+	script/
+
+nothing added to commit but untracked files present (use "git add" to track)
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git add .
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .github/workflows/bash.yml
+	new file:   script/bash.sh
+	new file:   script/script.R
+
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git commit -m 'add scripts and workflow'
+[main b382d0a] add scripts and workflow
+ 3 files changed, 21 insertions(+)
+ create mode 100644 .github/workflows/bash.yml
+ create mode 100644 script/bash.sh
+ create mode 100644 script/script.R
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (8/8), 816 bytes | 816.00 KiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ZhouBrianna/2025-02-11-scripts_docs.git
+   d14680e..b382d0a  main -> main
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .github/workflows/bash.yml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git add .
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git commit -m "manually run bash command as an action"
+[main 09a716f] manually run bash command as an action
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 737 bytes | 737.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ZhouBrianna/2025-02-11-scripts_docs.git
+   b382d0a..09a716f  main -> main
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git add .
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git commit -m "fixed error"
+[main ad80810] fixed error
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 505 bytes | 505.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ZhouBrianna/2025-02-11-scripts_docs.git
+   09a716f..ad80810  main -> main
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ pwd
+/Users/briannazhou/Downloads/dsci310/2025-02-11-scripts_docs
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git add .
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git commit -m "fixed another error"
+[main 8270641] fixed another error
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+(base) dhcp-128-189-80-112:2025-02-11-scripts_docs briannazhou$ git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 506 bytes | 506.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ZhouBrianna/2025-02-11-scripts_docs.git
+   ad80810..8270641  main -> main
